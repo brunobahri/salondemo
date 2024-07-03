@@ -20,7 +20,7 @@ public class ClientListView extends JPanel {
     public void updateClientList(List<Client> clients) {
         listModel.clear();
         for (Client client : clients) {
-            listModel.addElement(client.getName() + " - " + client.getPhoneNumber());
+            listModel.addElement(client.getName() + " - " + client.getPhoneNumber() + " - " + client.getDate() + " - " + client.getTime());
         }
     }
 }

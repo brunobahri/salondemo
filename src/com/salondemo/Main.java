@@ -15,7 +15,7 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
 
-        Client model = new Client("", "", null, null);
+        Client model = new Client("", "", null, null, "");
         ClientList clientList = new ClientList();
 
         ClientView clientView = new ClientView();

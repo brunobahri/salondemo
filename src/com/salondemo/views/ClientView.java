@@ -10,10 +10,11 @@ public class ClientView extends JPanel {
     private JTextField phoneNumberField;
     private JSpinner dateSpinner;
     private JSpinner timeSpinner;
+    private JComboBox<String> serviceTypeComboBox;
     private JButton saveButton;
 
     public ClientView() {
-        setLayout(new GridLayout(5, 2));
+        setLayout(new GridLayout(6, 2));
 
         // Adiciona os componentes ao painel
         add(new JLabel("Nome:"));
@@ -34,6 +35,10 @@ public class ClientView extends JPanel {
         timeSpinner.setEditor(new JSpinner.DateEditor(timeSpinner, "HH:mm"));
         add(timeSpinner);
 
+        add(new JLabel("Tipo de Serviço:"));
+        serviceTypeComboBox = new JComboBox<>(new String[]{"Corte de Cabelo", "Manicure", "Pedicure", "Massagem"});
+        add(serviceTypeComboBox);
+
         saveButton = new JButton("Salvar");
         add(saveButton);
     }
@@ -52,6 +57,10 @@ public class ClientView extends JPanel {
 
     public LocalTime getTime() {
         return ((SpinnerDateModel) timeSpinner.getModel()).getDate().toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalTime();
+    }
+
+    public String getServiceType() {
+        return (String) serviceTypeComboBox.getSelectedItem();
     }
 
     public JButton getSaveButton() {

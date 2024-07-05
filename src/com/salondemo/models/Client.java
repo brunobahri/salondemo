@@ -8,12 +8,14 @@ public class Client {
     private String phoneNumber;
     private LocalDate date;
     private LocalTime time;
+    private String serviceType;
 
-    public Client(String name, String phoneNumber, LocalDate date, LocalTime time) {
+    public Client(String name, String phoneNumber, LocalDate date, LocalTime time, String serviceType) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.date = date;
         this.time = time;
+        this.serviceType = serviceType;
     }
 
     // Getters e Setters
@@ -47,5 +49,13 @@ public class Client {
 
     public void setTime(LocalTime time) {
         this.time = time;
+    }
+
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
     }
 }

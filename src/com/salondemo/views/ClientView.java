@@ -13,6 +13,8 @@ public class ClientView extends JPanel {
     private JComboBox<String> serviceTypeComboBox;
     private JButton saveButton;
 
+    private JTextArea observartionsField;
+
     public ClientView() {
         setLayout(new GridLayout(6, 2));
 
@@ -39,6 +41,10 @@ public class ClientView extends JPanel {
         serviceTypeComboBox = new JComboBox<>(new String[]{"Corte de Cabelo", "Manicure", "Pedicure", "Massagem"});
         add(serviceTypeComboBox);
 
+        add(new JLabel("Observações"));
+        observartionsField =  new JTextArea();
+        add(observartionsField);
+
         saveButton = new JButton("Salvar");
         add(saveButton);
     }
@@ -61,6 +67,10 @@ public class ClientView extends JPanel {
 
     public String getServiceType() {
         return (String) serviceTypeComboBox.getSelectedItem();
+    }
+
+    public String getObservations() {
+        return observartionsField.getText();
     }
 
     public JButton getSaveButton() {

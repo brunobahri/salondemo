@@ -30,9 +30,11 @@ public class ClientController {
                 model.setDate(clientView.getDate());
                 model.setTime(clientView.getTime());
                 model.setServiceType(clientView.getServiceType());
-                clientList.addClient(new Client(model.getName(), model.getPhoneNumber(), model.getDate(), model.getTime(), model.getServiceType()));
+                model.setObservations(clientView.getObservations());
+                clientList.addClient(new Client(model.getName(), model.getPhoneNumber(), model.getDate(), model.getTime(), model.getServiceType(), model.getObservations()));
                 clientListView.updateClientList(clientList.getClients());
                 JOptionPane.showMessageDialog(null, "Cliente salvo com sucesso!");
+
             }
         });
     }

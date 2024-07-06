@@ -16,7 +16,7 @@ public class ClientView extends JPanel {
     private JTextArea observartionsField;
 
     public ClientView() {
-        setLayout(new GridLayout(6, 2));
+        setLayout(new GridLayout(7, 2,5,5));
 
         // Adiciona os componentes ao painel
         add(new JLabel("Nome:"));
@@ -29,7 +29,7 @@ public class ClientView extends JPanel {
 
         add(new JLabel("Data:"));
         dateSpinner = new JSpinner(new SpinnerDateModel());
-        dateSpinner.setEditor(new JSpinner.DateEditor(dateSpinner, "yyyy-MM-dd"));
+        dateSpinner.setEditor(new JSpinner.DateEditor(dateSpinner, "dd-MM-yy"));
         add(dateSpinner);
 
         add(new JLabel("Horário:"));
@@ -38,7 +38,7 @@ public class ClientView extends JPanel {
         add(timeSpinner);
 
         add(new JLabel("Tipo de Serviço:"));
-        serviceTypeComboBox = new JComboBox<>(new String[]{"Corte de Cabelo", "Manicure", "Pedicure", "Massagem"});
+        serviceTypeComboBox = new JComboBox<>(new String[]{"Corte de Cabelo", "Manicure", "Pedicure", "Massagem", "Outros"});
         add(serviceTypeComboBox);
 
         add(new JLabel("Observações"));

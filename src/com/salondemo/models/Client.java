@@ -10,12 +10,15 @@ public class Client {
     private LocalTime time;
     private String serviceType;
 
-    public Client(String name, String phoneNumber, LocalDate date, LocalTime time, String serviceType) {
+    private String observations;
+
+    public Client(String name, String phoneNumber, LocalDate date, LocalTime time, String serviceType, String observations) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.date = date;
         this.time = time;
         this.serviceType = serviceType;
+        this.observations = observations;
     }
 
     // Getters e Setters
@@ -57,5 +60,13 @@ public class Client {
 
     public void setServiceType(String serviceType) {
         this.serviceType = serviceType;
+    }
+
+    public String getObservations() {
+        return observations;
+    }
+
+    public void setObservations(String observations) {
+        this.observations = observations;
     }
 }
